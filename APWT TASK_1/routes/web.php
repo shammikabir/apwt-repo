@@ -1,25 +1,28 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PagesController;
 
 
-Route::get('/hello', function () {
-    return "hello world";
+
+/* view    
+Route::get('/teams',function(){
+
+    return view ('Ourteams');
 });
 
-Route::get('/home', function () {
-    return view ("homepage");
-});
+Route:: get('/about',function(){
 
-Route::get('/teams', function () {
-    return view ("Ourteams");
-});
+    return view ('Aboutus');
+})
+*/
 
-Route::get('/about', function () {
-    return view ("Aboutus");
-});
+Route::get('/teams', [PagesController::class, 'Ourteams']);
+Route::get('/about', [PagesController::class, 'about']);
+Route::get('/home', [PagesController::class, 'home']);
+Route::get('/contact', [PagesController::class, 'index']);
 
-Route::get('/contact', function () {
-    return view ("Contact");
-});
+
+
+?>
 
