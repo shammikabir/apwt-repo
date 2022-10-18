@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
+Route::get('/reg', [PagesController::class, 'Registration']);
+Route::post('/reg', [PagesController::class, 'registrationSubmitted']);
+Route::get('/login', [PagesController::class, 'Login']);
+Route::post('/login', [PagesController::class, 'loginSubmitted']);
+Route::get('/contact', [PagesController::class, 'contact']);
+Route::get('/contact', [PagesController::class, 'studentList']);
