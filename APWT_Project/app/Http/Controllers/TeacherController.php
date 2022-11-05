@@ -147,10 +147,10 @@ class TeacherController extends Controller
         
     }
 
-    // public function newstudent(){
+    public function newStudent(){
 
-    //     return view('Teacher.StudentCreate');
-    // }
+        return view('Teacher.StudentCreate');
+     }
 
     
     
@@ -163,7 +163,7 @@ class TeacherController extends Controller
             "Gender"=>'required',
             "Address"=>'required',
             "Course"=>"required",
-            'Email'=>'required' ,
+            'Email'=>'required|Email|unique:students,Email' ,
             
             
         ]);
@@ -177,6 +177,7 @@ class TeacherController extends Controller
         $user->Address=$request->Address;
         $user->Email=$request->Email;
         $user->Course=$request->Course;
+        $user->Password=$request->Password;
         $user->save();
         return redirect('Teacher.StudentList');
        
@@ -193,6 +194,14 @@ class TeacherController extends Controller
         
         
     }
+
+    public function StudentEdit(){
+
+        return view('Teacher.StudentEdit');
+    }
+
+
+    
 
 
 

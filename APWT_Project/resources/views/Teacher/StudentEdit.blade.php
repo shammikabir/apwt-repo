@@ -4,11 +4,11 @@
 <div class="card">
     <div class="card-header">
         <div class="row">
-            <div class="col col-md-6"><h1>Add New Student</h1></div>
+            <div class="col col-md-6"><h1>Edit Student Details</h1></div>
 
 <div class="card">
     <div class="card-body">
-        <form action="{{route('StudentCreate')}}" method="POST">
+        <form action="{{route('StudentEdit/{id}')}}" method="POST">
             @csrf
             @if(Session::has('success') )
             <div class="alert alert-success" role="alert">{{Session::get ('success')}}</div>
@@ -102,7 +102,7 @@
                     
              <div class="text- center">
             
-             <input type="submit" class="btn btn-primary" value="Add" />
+             <input type="submit" class="btn btn-primary" value="Update" />
              </div>
           </form>  
           </body>  

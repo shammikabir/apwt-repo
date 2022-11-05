@@ -44,10 +44,9 @@ Route::get('/TeacherDashboard', [TeacherController::class, 'TeacherDashboard'])-
 Route::get('/StudentList', [StudentController::class, 'StudentDetails'])->name('StudentList');
 Route::post('/StudentList', [StudentController::class, 'StudentDetails'])->name('StudentList');
 
-//Route::get('/StudentCreate', [TeacherController::class, ' newstudent'])->name('StudentCreate');
+Route::get('StudentCreate', [TeacherController::class, 'newStudent'])->name('StudentCreate');
 Route::post('/StudentCreate', [TeacherController::class, 'addStudent'])->name('StudentCreate');
 
-Route::get('/StudentCreate', function () {
-    return view('Teacher.StudentCreate');
-});
+Route::get('StudentEdit', [TeacherController::class, 'StudentEdit'])->name('StudentEdit');
+//Route::post('/StudentCreate', [TeacherController::class, 'addStudent'])->name('StudentCreate');
 

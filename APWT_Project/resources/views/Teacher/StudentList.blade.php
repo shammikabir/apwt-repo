@@ -13,25 +13,33 @@
  <table class="table table-success table-striped ">
         <thead class="table-dark">
         <tr>
+            <th scope="col">id</th>
             <th scope="col">First Name</th>
             <th scope="col">Last Name</th>
             <th scope="col">Course</th>
             <th scope="col">Gender</th>
             <th scope="col">Address</th>
             <th scope="col">Email</th>
+            <th scope="col-10">Edit</th>
+            <th scope="col">Delete</th>
+            
             
             
         </tr>
         </thead>
         <br> 
         @foreach($users as $user)
-        <tr>
+        <tr> 
+            <td>{{$user['FirstName']}}</td>
             <td>{{$user['FirstName']}}</td>
             <td>{{$user['LastName']}}</td>
             <td>{{$user['Course']}}</td>
             <td>{{$user['Gender']}}</td>
             <td>{{$user['Address']}}</td>
             <td>{{$user['Email']}}</td>
+
+            <td><a href= "{{route('StudentEdit')}}" class="btn btn-info">Edit</button></a>
+                <td><a href= "{{route('StudentEdit')}}" class="btn btn-danger">Delete</button></a>
            
          
          
